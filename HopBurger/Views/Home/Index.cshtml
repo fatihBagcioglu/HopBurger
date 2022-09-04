@@ -1,0 +1,25 @@
+﻿@model List<Item>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Kategori</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">SA</th>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
