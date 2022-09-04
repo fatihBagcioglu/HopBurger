@@ -16,8 +16,15 @@ namespace HopBurger.Controllers
         }
 
         public IActionResult Index()
+
         {
-            return View(_db.Items.ToList());
+            var vm = new HomeViewModel()
+            {
+                Categories = _db.Categories.OrderBy(x => x.Name).ToList(),
+                Items = _db.Items.OrderBy(x => x.Name).ToList(),
+            };
+
+            return View(vm);
         }
 
         public IActionResult Privacy()
